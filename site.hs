@@ -35,8 +35,18 @@ main = hakyll $ do
     compile $
       pandocCompiler
         >>= loadAndApplyTemplate "templates/post.html" postCtx
+        >>= saveSnapshot "content"
         >>= loadAndApplyTemplate "templates/default.html" postCtx
         >>= relativizeUrls
+
+  create ["atom.xml"] $ do
+    route idRoute
+    compile $ do
+      let feedCtx = postCtx `mappend` bodyField "description"
+      posts <-
+        fmap (take 10) . recentFirst
+          =<< loadAllSnapshots "posts/*" "content"
+      renderAtom myFeedConfiguration feedCtx posts
 
   create ["archive.html"] $ do
     route idRoute
