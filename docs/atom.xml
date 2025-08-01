@@ -10,8 +10,35 @@
         <email>andrii@unorsk.com</email>
         
     </author>
-    <updated>2015-08-12T00:00:00Z</updated>
+    <updated>2025-01-08T00:00:00Z</updated>
     <entry>
+    <title>Hello</title>
+    <link href="https://unorsk.com/posts/2025-01-08-hello.html" />
+    <id>https://unorsk.com/posts/2025-01-08-hello.html</id>
+    <published>2025-01-08T00:00:00Z</published>
+    <updated>2025-01-08T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<article>
+    <section class="header">
+        Posted on January  8, 2025
+        
+        by Andrii
+        
+    </section>
+    <section>
+        <h1 id="hello">Hello!</h1>
+<p>hello hello!</p>
+    </section>
+    <nav class="post-navigation">
+        
+        
+        <div class="nav-next">
+            <a href="/posts/2015-08-12-spqr.html">S.P.Q.R. →</a>
+        </div>
+        
+    </nav>
+</article>]]></summary>
+</entry>
+<entry>
     <title>S.P.Q.R.</title>
     <link href="https://unorsk.com/posts/2015-08-12-spqr.html" />
     <id>https://unorsk.com/posts/2015-08-12-spqr.html</id>
@@ -21,7 +48,7 @@
     <section class="header">
         Posted on August 12, 2015
         
-            by Andrii
+        by Andrii
         
     </section>
     <section>
@@ -79,8 +106,15 @@ sed, hendrerit vitae nunc. Nam gravida, urna vitae hendrerit rutrum, felis augue
 vulputate tortor, ut varius velit libero nec lectus. In adipiscing massa in est
 scelerisque ullamcorper. Vivamus in nisi metus.</p>
     </section>
-</article>
-]]></summary>
+    <nav class="post-navigation">
+        
+        <div class="nav-previous">
+            <a href="/posts/2025-01-08-hello.html">← Hello</a>
+        </div>
+        
+        
+    </nav>
+</article>]]></summary>
 </entry>
 
 </feed>

@@ -2,10 +2,22 @@
     <section class="header">
         Posted on $date$
         $if(author)$
-            by $author$
+        by $author$
         $endif$
     </section>
     <section>
         $body$
     </section>
+    <nav class="post-navigation">
+        $if(prevPost)$
+        <div class="nav-previous">
+            <a href="$prevPost$">← $prevTitle$</a>
+        </div>
+        $endif$
+        $if(nextPost)$
+        <div class="nav-next">
+            <a href="$nextPost$">$nextTitle$ →</a>
+        </div>
+        $endif$
+    </nav>
 </article>
