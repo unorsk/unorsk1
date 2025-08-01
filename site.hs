@@ -4,9 +4,15 @@
 import Data.Monoid (mappend)
 import Hakyll
 
+config :: Configuration
+config =
+  defaultConfiguration
+    { destinationDirectory = "docs"
+    }
+
 --------------------------------------------------------------------------------
 main :: IO ()
-main = hakyll $ do
+main = hakyllWith config $ do
   match "fonts/*" $ do
     route idRoute
     compile copyFileCompiler
