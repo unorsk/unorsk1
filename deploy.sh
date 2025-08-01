@@ -15,7 +15,7 @@ git checkout gh-pages
 
 echo "Removing old files..."
 # Remove all files except .git directory
-find . -maxdepth 1 -not -name '.git' -not -name '.' -exec rm -rf {} \;
+find . -maxdepth 1 -not -name '.git' -not -name '.' -not -name '_site' -exec rm -rf {} \;
 
 echo "Copying new site files..."
 cp -r _site/* .
