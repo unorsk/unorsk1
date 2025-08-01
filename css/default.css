@@ -6,13 +6,21 @@
   src: url("/fonts/IBMPlexSans-Regular.woff2") format("woff2")
 }
 
+@font-face {
+  font-display: swap;
+  font-family: "Iosevka";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/iosevka-regular.woff2") format("woff2")
+}
+
 html {
   font-size: 62.5%;
 }
 
 body {
   font-size: 1.6rem;
-  color: #000;
+  color: rgb(33, 34, 38);
   font-family: "IBM Plex Sans", sans-serif
 }
 
@@ -66,6 +74,36 @@ article .header {
   font-weight: bold;
   color: #000;
   text-decoration: none;
+}
+
+.post-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-previous,
+.nav-next {
+  flex: 1;
+}
+
+.nav-previous {
+  text-align: left;
+}
+
+.nav-next {
+  text-align: right;
+}
+
+blockquote {
+  border-left: 3px solid #851e94;
+  background-color: #fafafa;
+  margin: 1rem 0;
+  padding: .5rem 1rem;
+}
+
+.sourceCode {
+  font-family: 'Iosevka';
 }
 
 @media (max-width: 319px) {

@@ -1,0 +1,45 @@
+---
+title: Test
+author: Andrii
+---
+
+# Test post
+
+## Subheader
+
+#### Subsubheader
+
+This is a **post** I am __using to test__ stuff out. The content here makes no sense (or at least isn't supposed to)
+
+> ⚠️ Work in progress here
+
+
+```haskell
+main :: IO ()
+main = do
+  urls <- readBlogroll "blogroll.txt"
+  putStrLn $ "Found " ++ show (length urls) ++ " feeds"
+
+  fontBase64 <- loadFontAsBase64 "IBMPlexSans-Regular.woff2"
+  faviconMap <- fetchAllFavicons urls
+  let faviconCss = generateFaviconCss faviconMap
+
+  feeds <- mapM fetchFeed urls
+  let feedEntries = zipWith (\url result -> case result of
+        Left _err -> []
+        Right cont -> parseFeed url cont
+        ) urls feeds
+
+  let allEntries = mergeFeedEntries feedEntries
+  putStrLn $ "Total entries: " ++ show (length allEntries)
+
+  let recent25 = take 25 allEntries
+  let recentHtml = renderHtml recent25 "Good stuff!" faviconCss fontBase64
+  let allHtml = renderHtml allEntries "All Posts" faviconCss fontBase64
+
+  TIO.writeFile "index.html" recentHtml
+  TIO.writeFile "all.html" allHtml
+  putStrLn "Generated index.html (25 recent) and all.html"
+```
+
+

@@ -94,8 +94,8 @@ main = hakyllWith config $ do
 myFeedConfiguration :: FeedConfiguration
 myFeedConfiguration =
   FeedConfiguration
-    { feedTitle = "Haskell and Vegemite",
-      feedDescription = "Haskell and Vegemite",
+    { feedTitle = "Unorsk",
+      feedDescription = "",
       feedAuthorName = "Andrii",
       feedAuthorEmail = "andrii@unorsk.com",
       feedRoot = "https://unorsk.com"
