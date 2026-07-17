@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <title>Haskell and Vegemite</title>
+    <title>Unorsk</title>
     <link href="https://unorsk.com/atom.xml" rel="self" />
     <link href="https://unorsk.com" />
     <id>https://unorsk.com/atom.xml</id>
@@ -20,9 +20,9 @@
     <summary type="html"><![CDATA[<article>
     <section class="header">
         January  8, 2025
-        
+        <!-- 
         by Andrii
-        
+         -->
     </section>
     <section>
         <h1 id="hello">Hello!</h1>
@@ -47,9 +47,9 @@
     <summary type="html"><![CDATA[<article>
     <section class="header">
         August 12, 2015
-        
+        <!-- 
         by Andrii
-        
+         -->
     </section>
     <section>
         <h1 id="test-post">Test post</h1>

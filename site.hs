@@ -15,10 +15,6 @@ config =
 --------------------------------------------------------------------------------
 main :: IO ()
 main = hakyllWith config $ do
-  match "fonts/*" $ do
-    route idRoute
-    compile copyFileCompiler
-
   match "images/*" $ do
     route idRoute
     compile copyFileCompiler
@@ -76,7 +72,14 @@ main = hakyllWith config $ do
         >>= loadAndApplyTemplate "templates/default.html" archiveCtx
         >>= relativizeUrls
 
-  match "index.html" $ do
+  match "index.rst" $ do
+    route $ setExtension "html"
+    compile $
+      pandocCompiler
+        >>= loadAndApplyTemplate "templates/default.html" defaultContext
+        >>= relativizeUrls
+
+  match "posts.html" $ do
     route idRoute
     compile $ do
       posts <- recentFirst =<< loadAll ("posts/*" .&&. hasNoVersion)
