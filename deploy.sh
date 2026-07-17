@@ -2,38 +2,25 @@
 set -e
 
 echo "Building site..."
-cabal run site build
+cabal run site rebuild
 
-echo "Checking if _site directory exists..."
-if [ ! -d "_site" ]; then
-    echo "Error: _site directory not found. Make sure the build was successful."
+if [ ! -d "docs" ]; then
+    echo "Error: docs directory not found. Make sure the build was successful."
     exit 1
 fi
 
-echo "Switching to gh-pages branch..."
-git checkout gh-pages
-
-echo "Removing old files..."
-# Remove all files except .git directory
-find . -maxdepth 1 -not -name '.git' -not -name '.' -not -name '_site' -exec rm -rf {} \;
-
-echo "Copying new site files..."
-cp -r _site/* .
-
-echo "Adding files to git..."
-git add .
-
-echo "Committing changes..."
-if git diff --staged --quiet; then
-    echo "No changes to commit."
+# jj auto-snapshots the working copy; commit it if there's anything new
+if [ "$(jj log -r @ --no-graph -T 'if(empty, "empty", "nonempty")')" = "nonempty" ]; then
+    echo "Committing changes..."
+    jj commit -m "Deploy site - $(date '+%Y-%m-%d %H:%M:%S')"
 else
-    git commit -m "Deploy site - $(date '+%Y-%m-%d %H:%M:%S')"
-    echo "Pushing to GitHub..."
-    git push origin gh-pages
-    echo "Site deployed successfully!"
+    echo "No new changes to commit."
 fi
 
-echo "Switching back to main branch..."
-git checkout main
+echo "Pointing main at the latest commit..."
+jj bookmark set main -r @-
+
+echo "Pushing to GitHub..."
+jj git push --bookmark main
 
 echo "Deployment complete!"
