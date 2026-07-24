@@ -72,7 +72,7 @@ main = hakyllWith config $ do
         >>= loadAndApplyTemplate "templates/default.html" archiveCtx
         >>= relativizeUrls
 
-  match "index.rst" $ do
+  match "index.md" $ do
     route $ setExtension "html"
     compile $
       pandocCompiler
