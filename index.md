@@ -10,6 +10,9 @@ Some things about me:
 Some books I enjoyed:
 
 - 2026
+  - Into Thin Air (by Jon Krakauer)
+  - Rinsed (by Geoff White)
+  - The Devotion of Suspect X (by Keigo Higashino)
   - The Proof in the Code (by Kevin Hartnett)
   - The Irrational Decision (by Benjamin Recht)
   - Minneapolis (Jo Nesbø, in Norwegian)
