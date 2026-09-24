@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <title>Unorsk</title>
+    <subtitle><![CDATA[]]></subtitle>
     <link href="https://unorsk.com/atom.xml" rel="self" />
     <link href="https://unorsk.com" />
     <id>https://unorsk.com/atom.xml</id>
